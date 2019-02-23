@@ -1,0 +1,202 @@
+The usage data represents the US electricity consumption for different years in the month of July. 
+The usage data are in 109 kWh/day, and the price data is in US cents per kWh.
+
+Electricity data is stored in a file named electricity.mat.
+The residential data is stored in the first column. 
+The commercial data is stored in the second column.
+The industrial data is stored in the third column. 
+The usage data was collected annually between the years 1991 to 2013. 
+The yrs variable you create will help you to plot the data over a meaningful range.
+Plot res (y-axis) against yrs (x-axis) with a blue (b) dashed line (--).
+Plot comm (y-axis) against yrs (x-axis) with a black (k) dotted line (:).
+Plot ind (y-axis) against yrs (x-axis) with a magenta (m) dash-dot line (-.).
+Add the title 'July Electricity Usage' to the existing plot.
+Add the legend values 'res', 'comm', and 'ind' to the existing plot.
+When looking at the figure, it is clear that the industrial sector's electricity usage is fairly consistent and 
+does not seem to fluctuate as much as the residential and commercial sectors.
+
+/*****************************************************************************************************************************************
+CODE  i-->input command   o-->output / result
+*****************************************************************************************************************************************/
+
+load electricity.mat                                                                          i
+usage                                                                                         i
+usage =                                                                                       o
+
+    3.0484    2.5848    2.6408
+    2.8610    2.5530       NaN
+    3.2602    2.7084    2.7345
+    3.3420    2.8097    2.8019
+    3.3555    2.9167    2.7960
+    3.4234    2.9299    2.8579
+    3.5268    3.1561    2.8597
+    3.9185    3.3057    2.8757
+    3.9718    3.4761    2.9984
+    3.8540    3.4748    2.8998
+    3.8934    3.5968    2.6826
+    4.3127    3.7088    2.8427
+    4.2153    3.7172    2.8301
+    4.1711    3.7257    2.8542
+    4.6605    3.9367    2.8512
+    4.7528    4.0497    2.8671
+    4.4847    3.9975    2.8715
+    4.6216    4.1299    2.8487
+    4.4413    3.9229    2.5176
+    4.9899    4.1266    2.7653
+    4.9913    4.1311    2.8143
+    4.9864    4.1463    2.8135
+    4.6270    4.1205    2.7001
+
+usage(2,3)=2.74                                                                               i
+
+usage =                                                                                       o
+
+    3.0484    2.5848    2.6408
+    2.8610    2.5530    2.7400
+    3.2602    2.7084    2.7345
+    3.3420    2.8097    2.8019
+    3.3555    2.9167    2.7960
+    3.4234    2.9299    2.8579
+    3.5268    3.1561    2.8597
+    3.9185    3.3057    2.8757
+    3.9718    3.4761    2.9984
+    3.8540    3.4748    2.8998
+    3.8934    3.5968    2.6826
+    4.3127    3.7088    2.8427
+    4.2153    3.7172    2.8301
+    4.1711    3.7257    2.8542
+    4.6605    3.9367    2.8512
+    4.7528    4.0497    2.8671
+    4.4847    3.9975    2.8715
+    4.6216    4.1299    2.8487
+    4.4413    3.9229    2.5176
+    4.9899    4.1266    2.7653
+    4.9913    4.1311    2.8143
+    4.9864    4.1463    2.8135
+    4.6270    4.1205    2.7001
+
+res = usage(:,1)                                                                              i
+  
+res =                                                                                         o
+
+    3.0484
+    2.8610
+    3.2602
+    3.3420
+    3.3555
+    3.4234
+    3.5268
+    3.9185
+    3.9718
+    3.8540
+    3.8934
+    4.3127
+    4.2153
+    4.1711
+    4.6605
+    4.7528
+    4.4847
+    4.6216
+    4.4413
+    4.9899
+    4.9913
+    4.9864
+    4.6270
+
+comm = usage(:,2)                                                                         i
+
+comm =                                                                                    o
+
+    2.5848
+    2.5530
+    2.7084
+    2.8097
+    2.9167
+    2.9299
+    3.1561
+    3.3057
+    3.4761
+    3.4748
+    3.5968
+    3.7088
+    3.7172
+    3.7257
+    3.9367
+    4.0497
+    3.9975
+    4.1299
+    3.9229
+    4.1266
+    4.1311
+    4.1463
+    4.1205
+    
+ind = usage(:,3)                                                                              i
+
+ind =                                                                                         o
+
+    2.6408
+    2.7400
+    2.7345
+    2.8019
+    2.7960
+    2.8579
+    2.8597
+    2.8757
+    2.9984
+    2.8998
+    2.6826
+    2.8427
+    2.8301
+    2.8542
+    2.8512
+    2.8671
+    2.8715
+    2.8487
+    2.5176
+    2.7653
+    2.8143
+    2.8135
+    2.7001
+
+yrs = (1991:1:2013)'                                                                            i
+
+yrs =                                                                                           o
+
+        1991
+        1992
+        1993
+        1994
+        1995
+        1996
+        1997
+        1998
+        1999
+        2000
+        2001
+        2002
+        2003
+        2004
+        2005
+        2006
+        2007
+        2008
+        2009
+        2010
+        2011
+        2012
+        2013
+
+
+plot(yrs,res,'b--')                                           i
+
+hold on                                                       i
+
+plot(yrs,comm,'k:')                                           i
+
+plot(yrs,ind,'m-.')                                           i
+
+title('July Electricity Usage')                               i
+
+legend('res','comm','ind')                                    i
+
