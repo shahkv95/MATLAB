@@ -19,9 +19,9 @@ does not seem to fluctuate as much as the residential and commercial sectors.
 CODE  i-->input command   o-->output / result
 *****************************************************************************************************************************************/
 
-load electricity.mat                                                                          i
-usage                                                                                         i
-usage =                                                                                       o
+load electricity.mat                                                                         i
+usage                                                                                        i
+usage =                                                                                      o
 
     3.0484    2.5848    2.6408
     2.8610    2.5530       NaN
@@ -103,9 +103,9 @@ res =                                                                           
     4.9864
     4.6270
 
-comm = usage(:,2)                                                                         i
+comm = usage(:,2)                                                                       i
 
-comm =                                                                                    o
+comm =                                                                                  o
 
     2.5848
     2.5530
@@ -131,9 +131,9 @@ comm =                                                                          
     4.1463
     4.1205
     
-ind = usage(:,3)                                                                              i
+ind = usage(:,3)                                                                            i
 
-ind =                                                                                         o
+ind =                                                                                       o
 
     2.6408
     2.7400
